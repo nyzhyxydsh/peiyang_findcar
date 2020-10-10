@@ -1,0 +1,60 @@
+ <!-- 搜索模块 -->
+<view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="输入目的地" value="{{inputVal}}" focus="{{inputShowed}}" bindconfirm="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">目的地</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+        </view>
+<view class="page">
+  <view class="page_bd">
+  
+  </view>
+  <!-- 信息展示模块 -->
+  <!-- 展示类型 -->
+  <view class="findType">
+    <!-- <view class="allfind">筛选：</view> -->
+    <image src="../../image/all.png" class="menu" bindtap="findby" data-type="{{null}}"></image>全部
+    <image src="../../image/car.png" class="menu" bindtap="findby" data-type="findcar"></image>找车
+    <image src="../../image/people.png" class="menu" bindtap="findby" data-type="findpeople"></image>找人
+  </view>
+  <!-- 对应信息 -->
+  <view class="info">
+    <view class="weui-cells weui-cells_after-title" wx:for="{{infos}}" wx:key="{{item.id}}">
+      <navigator url="../detail/detail?id={{item.id}}&dotype=show" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <image src="{{item.list[0].avatarUrl}}" style="margin-right: 16px;vertical-align: middle;width:30px; height: 30px;"></image>
+          </view>
+          <view class="weui-cell__bd">{{item.startAddress}}-{{item.endAddress}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{item.ftype=='findcar'?'人找车':'车找人'}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view class="weui-demo-dialog {{istrue ? 'weui-demo-dialog_show' : ''}}">
+          <view class="weui-mask" bindtap="closeDialog"></view>
+          <view class="weui-dialog__wrp" bindtap="closeDialog">
+              <view class="weui-dialog" catchtap="stopEvent">
+                <view class="weui-dialog__hd">
+                  <view class="weui-dialog__title">温馨提示</view>
+                </view>
+                <view class="weui-dialog__bd">
+                  为了更好用户体验，我们将获取您的基本头像和昵称信息，谢谢合作！
+                </view>
+                <view class="weui-dialog__ft">
+                    <button class="dialog-btn-no" bindtap="closeDialog">取消</button>
+                    <button class="dialog-btn-ok" bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">确定</button>
+                </view>
+              </view>
+          </view>
+        </view>

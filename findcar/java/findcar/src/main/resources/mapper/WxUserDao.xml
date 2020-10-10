@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="niyuzhi.findcar.mapper.WxUserDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="niyuzhi.findcar.entity.WxUser">
+        <result column="id" property="id"/>
+        <result column="user_name" property="userName"/>
+        <result column="open_id" property="openId"/>
+        <result column="avatar_url" property="avatarUrl"/>
+        <result column="login_date" property="loginDate"/>
+        <result column="sex" property="sex"/>
+        <result column="born" property="bornDate"/>
+        <result column="wx_number" property="wxNumber"/>
+        <result column="qq_number" property="qqNumber"/>
+        <result column="local_address" property="localAddress"/>
+        <result column="work_address" property="workAddress"/>
+        <result column="constellation" property="constellation"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        user_name,
+        open_id,
+        avatar_url,
+        login_date,
+        sex,
+        born,
+        wx_number,
+        qq_number,
+        local_address,
+        work_address,
+        constellation
+
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tb_user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.userName != null"> user_name, </if>
+            <if test="pojo.openId != null"> open_id, </if>
+            <if test="pojo.avatarUrl != null"> avatar_url, </if>
+            <if test="pojo.loginDate != null"> login_date, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.userName != null"> #{pojo.userName}, </if>
+            <if test="pojo.openId != null"> #{pojo.openId}, </if>
+            <if test="pojo.avatarUrl != null"> #{pojo.avatarUrl}, </if>
+            <if test="pojo.loginDate != null"> #{pojo.loginDate}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE tb_user
+        <set>
+            <if test="pojo.avatarUrl != null"> avatar_url = #{pojo.avatarUrl}, </if>
+            <if test="pojo.loginDate != null"> login_date = #{pojo.loginDate}, </if>
+            <if test="pojo.sex != null"> sex = #{pojo.sex}, </if>
+            <if test="pojo.bornDate != null"> born = #{pojo.bornDate}, </if>
+            <if test="pojo.wxNumber != null"> wx_number = #{pojo.wxNumber}, </if>
+            <if test="pojo.qqNumber != null"> qq_number = #{pojo.qqNumber}, </if>
+            <if test="pojo.localAddress != null"> local_address = #{pojo.localAddress}, </if>
+            <if test="pojo.workAddress != null"> work_address = #{pojo.workAddress}, </if>
+            <if test="pojo.constellation != null"> constellation = #{pojo.constellation} </if>
+        </set>
+         WHERE open_id = #{pojo.openId}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM tb_user
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.userName != null"> AND user_name = #{pojo.userName} </if>
+            <if test="pojo.openId != null"> AND open_id = #{pojo.openId} </if>
+            <if test="pojo.avatarUrl != null"> AND avatar_url = #{pojo.avatarUrl} </if>
+            <if test="pojo.loginDate != null"> AND login_date = #{pojo.loginDate} </if>
+        </where>
+        LIMIT 1000 
+    </select>
+    <select id="selectByOpenId" resultMap="AllColumnMap">
+        select <include refid="all_column"/> from tb_user where open_id = #{userId}
+    </select>
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM tb_user where id = #{id}
+    </delete>
+</mapper>

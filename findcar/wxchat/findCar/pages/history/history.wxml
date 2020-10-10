@@ -1,0 +1,13 @@
+<view class="page">
+  <view class="info">
+    <view class="weui-cells weui-cells_after-title" wx:for="{{infos}}" wx:key="{{item.id}}">
+      <navigator url="../detail/detail?id={{item.id}}&dotype=user" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__hd">
+              <image src="{{item.list[0].avatarUrl}}" style="margin-right: 16px;vertical-align: middle;width:30px; height: 30px;"></image>
+          </view>
+          <view class="weui-cell__bd">{{item.startAddress}}-{{item.endAddress}}</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access">{{item.ftype=='findcar'?'人找车':'车找人'}}</view>
+      </navigator>
+    </view>
+  </view>
+</view>

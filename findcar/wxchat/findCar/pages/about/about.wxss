@@ -1,0 +1,17 @@
+.title{
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10rpx;
+  border-bottom: 4rpx solid purple;
+  width: 60%;
+  color: purple;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.bd{
+  margin-top: 20rpx;
+}

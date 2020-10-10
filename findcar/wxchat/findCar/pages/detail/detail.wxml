@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="title">详细信息</view>
+  <view class="txt">类型：{{(infos[0].ftype)==findcar?'人找车':'车找人'}}</view>
+  <view class="txt">地点：{{infos[0].startAddress}}-{{infos[0].endAddress}}</view>
+  <view class="txt">电话：{{infos[0].tel}}</view>
+  <view class="txt">人数：{{infos[0].peopleCount}}人</view>
+  <view class="txt">出发时间：{{infos[0].goDate}}</view>
+  <view class="txt">发布时间：{{infos[0].releaseDate}}</view>
+  <view class="txt">备注：{{infos[0].mark}}</view>
+  <view class="tell">
+    <button wx:if="{{dotype=='show'}}" class="weui-btn" type="primary" bindtap="makeCall">马上联系</button>
+    <button wx:if="{{dotype=='user'}}" class="weui-btn" type="warn" bindtap="deleteInfo">删除</button>
+  </view>
+  <view>
+    <text>注意：请勿恶意骚扰，情节严重者系统会将您得信息提交公安机关处理！</text>
+  </view>
+</view>

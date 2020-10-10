@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="niyuzhi.findcar.mapper.ReleaseDao">
+
+<!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="niyuzhi.findcar.entity.Release">
+        <result column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="start_address" property="startAddress"/>
+        <result column="end_address" property="endAddress"/>
+        <result column="go_date" property="goDate"/>
+        <result column="tel" property="tel"/>
+        <result column="p_count" property="peopleCount"/>
+        <result column="mark" property="mark"/>
+        <result column="release_date" property="releaseDate"/>
+        <result column="is_show" property="isShow"/>
+        <result column="ftype" property="ftype"/>
+        <collection property="list" column="user_id" select="niyuzhi.findcar.mapper.WxUserDao.selectByOpenId"/>
+    </resultMap>
+
+<!--auto generated Code-->
+    <sql id="all_column">
+        id,
+        user_id,
+        start_address,
+        end_address,
+        go_date,
+        tel,
+        p_count,
+        mark,
+        release_date,
+        is_show,
+        ftype
+    </sql>
+
+<!--auto generated Code-->
+    <insert id="insert">
+        INSERT INTO tb_release
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> id, </if>
+            <if test="pojo.userId != null"> user_id, </if>
+            <if test="pojo.startAddress!= null"> start_address, </if>
+            <if test="pojo.endAddress != null"> end_address, </if>
+            <if test="pojo.goDate != null"> go_date, </if>
+            <if test="pojo.tel != null"> tel, </if>
+            <if test="pojo.peopleCount != null"> p_count, </if>
+            <if test="pojo.mark != null"> mark, </if>
+            <if test="pojo.releaseDate != null"> release_date, </if>
+            <if test="pojo.isShow != null"> is_show, </if>
+            <if test="pojo.ftype != null"> ftype, </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.id != null"> #{pojo.id}, </if>
+            <if test="pojo.userId != null"> #{pojo.userId}, </if>
+            <if test="pojo.startAddress != null"> #{pojo.startAddress}, </if>
+            <if test="pojo.endAddress != null"> #{pojo.endAddress}, </if>
+            <if test="pojo.goDate != null"> #{pojo.goDate}, </if>
+            <if test="pojo.tel != null"> #{pojo.tel}, </if>
+            <if test="pojo.peopleCount != null"> #{pojo.peopleCount}, </if>
+            <if test="pojo.mark != null"> #{pojo.mark}, </if>
+            <if test="pojo.releaseDate != null"> #{pojo.releaseDate}, </if>
+            <if test="pojo.isShow != null"> #{pojo.isShow}, </if>
+            <if test="pojo.ftype != null"> #{pojo.ftype}, </if>
+        </trim>
+    </insert>
+
+<!--auto generated Code-->
+    <update id="update">
+        UPDATE tb_release
+        <set>
+            <if test="pojo.id != null">id =  #{pojo.id}, </if>
+            <if test="pojo.userId != null">user_id =  #{pojo.userId}, </if>
+            <if test="pojo.startAddress != null">start_address =  #{pojo.startAddress}, </if>
+            <if test="pojo.endAddress != null">end_address =  #{pojo.endAddress}, </if>
+            <if test="pojo.goDate != null">go_date =  #{pojo.goDate}, </if>
+            <if test="pojo.tel != null">tel =  #{pojo.tel}, </if>
+            <if test="pojo.peopleCount != null">p_count =  #{pojo.peopleCount}, </if>
+            <if test="pojo.mark != null">mark =  #{pojo.mark}, </if>
+            <if test="pojo.releaseDate != null">release_date =  #{pojo.releaseDate}, </if>
+            <if test="pojo.isShow != null">is_show =  #{pojo.isShow}, </if>
+            <if test="pojo.ftype != null">type =  #{pojo.ftype}, </if>
+        </set>
+         WHERE id = #{pojo.id}
+    </update>
+
+<!--auto generated Code-->
+    <select id="select" resultMap="AllColumnMap">
+        SELECT <include refid="all_column"/>
+        FROM tb_release
+        <where>
+            <if test="pojo.id != null"> AND id = #{pojo.id} </if>
+            <if test="pojo.userId != null"> AND user_id = #{pojo.userId} </if>
+            <if test="pojo.ftype != null"> AND ftype = #{pojo.ftype} </if>
+            <if test="pojo.isShow != null"> AND is_show = #{pojo.isShow} </if>
+            <if test="pojo.endAddress != null"> AND end_address = #{pojo.endAddress} </if>
+        </where>
+        ORDER BY release_date DESC
+    </select>
+    <select id="findCount" resultType="java.util.Map">
+      select ftype, count(1) findcount from tb_release where user_id = #{userId} GROUP BY ftype
+    </select>
+
+<!--auto generated Code-->
+    <delete id="delete">
+        DELETE FROM tb_release where id = #{id}
+    </delete>
+</mapper>

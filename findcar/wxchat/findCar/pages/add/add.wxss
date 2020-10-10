@@ -1,0 +1,38 @@
+.title{
+  display: flex;
+  font-size: 16pt;
+  font-weight: bold;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20rpx;
+  border-bottom: 4rpx solid purple;
+  color: 	#800080;
+}
+.type{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.address{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: center;
+}
+.label{
+  font-size: 11pt;
+  color: rgb(27, 26, 26);
+}
+.info{
+  margin-top: 20rpx;
+  padding-top: 10rpx;
+}
+input{
+  border: 4rpx solid purple;
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+.pick{
+  display: flex;
+  flex-direction: row;
+}

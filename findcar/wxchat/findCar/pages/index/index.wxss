@@ -1,0 +1,54 @@
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result .weui-cell__bd{
+  padding: 2px 0 2px 20px;
+  color: #666;
+}
+.searchbar-result:before{
+    display: none;
+}
+.findType{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.allfind,.pfindc,.cfindp{
+  padding: 5rpx;
+  color: white;
+  background-color: gray;
+  border: 2rpx solid green;
+  border-radius: 5%;
+}
+.weui-demo-dialog{
+  visibility:hidden;
+  opacity:0;
+  transition:opacity .3s;
+}
+.weui-demo-dialog_show{
+  visibility:visible;
+  opacity:1;
+}
+.dialog-btn-ok,.dialog-btn-no{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.dialog-btn-ok{
+  color: green;
+  border-left: 1rpx solid rgb(224, 218, 218);
+}
+.info{
+  margin-top: 10rpx;
+  border-top: 4rpx solid gray;
+}
+.menu{
+  width: 80rpx;
+  height: 80rpx;
+}
+.info,.weui-search-bar{
+  opacity: 0.7;
+}

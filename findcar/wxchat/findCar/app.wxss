@@ -1,0 +1,8 @@
+@import './weui.wxss';
+.page{
+  padding: 10rpx;
+}
+page{
+  background: -webkit-linear-gradient(top,rgb(184, 146, 233),rgb(242, 161, 245)
+  ,rgb(173, 220, 238));
+}

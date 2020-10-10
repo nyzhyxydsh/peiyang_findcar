@@ -1,0 +1,23 @@
+<view class="page">
+  <view class="top">
+    <view class="title">关于</view>
+  </view>
+  <view class="weui-article__section bd">
+                    <view class="weui-article__h3">关于小程序</view>
+                    <view class="weui-article__p">
+                        本小程序主要功能是发布找人或者找车信息，与找车群比起来信息更加明了，不管您是找人还是找车，都可以了解大概的信息，然后联系对方。方便快捷，后续的功能会继续完善，也希望可以反馈您的建议。
+                    </view>
+                    <view class="weui-article__h3">关于作者</view>
+                    <view class="weui-article__p">
+                        普通的小伙子一枚，闲暇时间编写了这个小程序，如果有需要其他的小程序的可以联系本人
+                    </view>
+                    <view class="weui-article__p">
+                        点击图片并保存后扫描可以访问我的博客
+                        <image bindtap="preview" data-url="{{about[0]}}" class="weui-article__img" src="{{about[0]}}" mode="aspectFit" style="height: 180px" />
+                        </view>
+                      <view class="weui-article__p">
+                        点击图片并保存后扫描可以加我的微信
+                        <image bindtap="preview" class="weui-article__img" src="{{about[1]}}" mode="aspectFit" data-url="{{about[1]}}" style="height: 180px" />
+                    </view>
+                </view>
+</view>

@@ -1,0 +1,55 @@
+<view class="page">
+  <view class="title">
+    <view class="lie">
+      个人资料
+    </view>
+  </view>
+  <form bindsubmit="updateInfo">
+  <view class="info">
+      <view class="item">
+        <radio-group bindchange="sexChange">
+          <view class="sex">
+            <!-- 第一个color是选框选中后的颜色，style中的color是字体颜色 -->
+            <radio value="man" name="sex" color="#1E90FF" checked="{{checkMan}}" style="color: #1E90FF">我是帅哥</radio>
+            <radio value="women" name="sex" checked="{{checkWom}}" color="#FF1493" style="color: #FF1493">我是美女</radio>
+          </view>
+        </radio-group>
+      </view>
+      <view class="item">
+      <view class="born">
+        出生年月: 
+        <picker mode="date" value="{{startDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">
+        <input type="text" name="bornDate" value="{{bornDate}}" placeholder="选择出生日期" disabled="true"></input>
+        </picker>
+      </view>
+    </view>
+    <view class="item">
+      <view class="born">
+        星座: <input type="text" name="xingzuo" value="{{xingzuo}}" placeholder="选择你星座" disabled="true"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="born">
+        微信号: <input type="text" name="wxNumber" value="{{info.wxNumber}}" placeholder="输入微信号"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="born">
+        QQ号: <input type="text" name="qqNumber" value="{{info.qqNumber}}" placeholder="输入QQ号"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="born">
+        故乡: <input type="text" name="localAddress" value="{{info.localAddress}}" placeholder="输入故乡"></input>
+      </view>
+    </view>
+    <view class="item">
+      <view class="born">
+        工作地: <input type="text" name="workAddress" value="{{info.workAddress}}" placeholder="输入工作地"></input>
+      </view>
+    </view>
+    <!-- type 有效值： （primary 绿色）（default白色）（warn红色）form-type 有效值： （submit 提交表单）（reset 重置表单） -->
+    <button class="weui-btn btn" type="primary" form-type="submit" size="default">提交</button>
+  </view>
+  </form>
+</view>

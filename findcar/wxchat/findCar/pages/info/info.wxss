@@ -1,0 +1,32 @@
+.sex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.lie{
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 4rpx solid black;
+  width: 80%; 
+  padding-bottom: 30rpx;
+}
+.item{
+  border-bottom: 4rpx solid gray;
+  padding-top: 20rpx;
+  padding-bottom: 10rpx;
+}
+.born{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: right;
+}
+.btn{
+  margin-top: 40rpx;
+}

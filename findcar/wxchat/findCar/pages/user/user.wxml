@@ -1,0 +1,39 @@
+<view class="title">
+    <view class="card">
+      <view class="avatar">
+        <image src="{{avatarUrl}}"></image>
+        <view class="username">
+        {{username}}
+      </view>
+      </view>
+      
+      <view class="jilu">
+        <view class="f-info">找车次数:{{fccount}}</view>
+        <view class="f-info">找人次数:{{fpcount}}</view>
+      </view>
+    </view>
+</view>
+<view class="page">
+  <navigator url="../history/history">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">发布历史</view>
+    </view>
+  </navigator>
+
+  <navigator url="../info/info">
+    <view class="weui-cell">
+      <view class="weui-cell__bd">个人资料</view>
+    </view>
+  </navigator>
+  
+  <navigator url="../message/message">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">意见反馈</view>
+  </view>
+  </navigator>
+  <navigator url="../about/about">
+  <view class="weui-cell">
+    <view class="weui-cell__bd">关于</view>
+  </view>
+  </navigator>
+</view>

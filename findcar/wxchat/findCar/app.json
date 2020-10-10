@@ -1,0 +1,46 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/history/history",
+    "pages/user/user",
+    "pages/add/add",
+    "pages/info/info",
+    "pages/about/about",
+   "pages/message/message",
+    "pages/detail/detail"
+       
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarTitleText": "北洋拼车",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "backgroundColor": "#F5F5F5",
+    "selectedColor": "#1E90FF",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "/image/index.png",
+      "selectedIconPath": "/image/indexed.png",
+      "text": "拼车广场"
+    },
+    {
+      "pagePath": "pages/add/add",
+      "iconPath": "/image/add.png",
+      "selectedIconPath": "/image/add2.png",
+      "text": "信息发布"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "iconPath": "/image/user.png",
+      "selectedIconPath": "/image/usered.png",
+      "text": "我的"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

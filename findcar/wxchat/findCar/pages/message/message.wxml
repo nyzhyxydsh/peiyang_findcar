@@ -1,0 +1,17 @@
+<view class="page">
+  <view class="title">建议反馈</view>
+  <form bindsubmit="makeMsg">
+  <view class="data">
+    <view class="message">
+      <label>留言框</label>
+      <textarea name="message" class="weui-textarea" placeholder="留下您的反馈..."></textarea>
+    </view>
+    <view class="info">
+      <label for="username">联系方式</label><input name="username" id="username" type="text" placeholder="手机号/邮箱/微信/qq"></input>
+    </view>
+    <button form-type="submit" class="weui-btn" type="primary" size="default">提交</button>
+  </view>
+  </form>
+</view>
+
+
