@@ -73,7 +73,7 @@ Page({
       },
       success:function(res){
         console.log(res);
-      }
+      },
     })
   },
   bindDateChange: function(e){
@@ -93,5 +93,6 @@ Page({
     this.setData({
       xingzuo: s[xz]+"座"
     })
-  }
+  },
+ 
 })

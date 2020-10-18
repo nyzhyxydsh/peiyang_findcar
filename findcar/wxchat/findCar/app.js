@@ -6,12 +6,12 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
+        //console.log(res)
         util.requestUrl({
           url: '/wx/getOpenId?code='+res.code,
           method: 'get',
           success: function(res) {
-            console.log(res)
+            //console.log(res)
             wx.setStorageSync("openId", res.data.openid)
           }
         })
@@ -20,7 +20,7 @@ App({
     // 获取用户信息
     wx.getSetting({
       success: res => {
-        console.log(res)
+        //console.log(res)
         if (res.authSetting['scope.userInfo']) {
           // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
           wx.getUserInfo({

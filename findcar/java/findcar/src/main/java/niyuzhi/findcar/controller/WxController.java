@@ -46,6 +46,7 @@ public class WxController {
         SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
         String addDate = format.format(new Date());
         release.setReleaseDate(addDate);
+        System.out.println(release) ;
         return releaseService.addRelease(release);
     }
 

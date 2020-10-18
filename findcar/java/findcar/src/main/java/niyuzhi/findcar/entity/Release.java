@@ -1,5 +1,6 @@
 package niyuzhi.findcar.entity;
 
+import com.sun.org.apache.xpath.internal.objects.XString;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -20,6 +21,7 @@ public class Release {
     private String releaseDate;
     private Boolean isShow;
     private String ftype;//人找车or车找人
+    //private String note;
 
     private Integer pageNum;
     private Integer pageSize;

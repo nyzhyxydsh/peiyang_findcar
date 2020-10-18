@@ -9,9 +9,7 @@ public class WxUser {
     private Integer id;
     private String userName;
     private String openId;//用户识别码
-
     private String avatarUrl;
-
     private String loginDate;
     private String sex;
     private String bornDate;

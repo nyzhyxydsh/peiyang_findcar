@@ -35,16 +35,26 @@ Page({
         userId: userId 
       },
       success: function (res){
-        console.log(res)
+        //console.log(res)
         let fccount = 0;
         let fpcount = 0;
-        if(res.data.length==1){
+
+        if(res.data.length==0)
+        {
+         
+          fccount = 0;
+          fpcount = 0;
+        }
+        
+        else if(res.data.length==1){
+          //console.log("结果是1")
           if(res.data[0].ftype=='findcar'){
             fccount = res.data[0].findcount
           }else{
             fpcount = res.data[0].findcount
           }
-        }else{
+        }
+        else{
           fccount = res.data[0].findcount;
           fpcount = res.data[1].findcount;
         }

@@ -24,7 +24,6 @@ const requestUrl = ({
   wx.showLoading({
     title: '加载中',
   });
-  // let server = 'http://www.huhailong.vip:8080';//正式域名
   let server = 'http://127.0.0.1';//测试域名
   let openid = wx.getStorageSync("openId"),
     that = this;

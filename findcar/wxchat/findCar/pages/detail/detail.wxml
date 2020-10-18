@@ -6,7 +6,8 @@
   <view class="txt">人数：{{infos[0].peopleCount}}人</view>
   <view class="txt">出发时间：{{infos[0].goDate}}</view>
   <view class="txt">发布时间：{{infos[0].releaseDate}}</view>
-  <view class="txt">备注：{{infos[0].mark}}</view>
+  <view class="txt">途径地：{{infos[0].mark}}</view>
+  <!-- <view class="txt">备 注：{{infos[0].note}}</view> -->
   <view class="tell">
     <button wx:if="{{dotype=='show'}}" class="weui-btn" type="primary" bindtap="makeCall">马上联系</button>
     <button wx:if="{{dotype=='user'}}" class="weui-btn" type="warn" bindtap="deleteInfo">删除</button>

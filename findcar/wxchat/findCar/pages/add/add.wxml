@@ -26,8 +26,9 @@
             <input class="weui-input" name="tel" placeholder="请输入手机号" type="number"></input>
             <view class="label">人数</view>
             <input class="weui-input" name="pCount" placeholder="请输入人数" type="number"></input>
-            <view class="label">备注</view>
-            <input class="weui-input" name="mark" placeholder="备注" type="text"></input>
+            <view class="label">途经地</view>
+            <input class="weui-input" name="mark" placeholder="行驶路线" type="text"></input>
+            
     </view>
       <button style="margin-top:20rpx" class="weui-btn" type="primary" form-type="submit">立即发布</button>
   </view>

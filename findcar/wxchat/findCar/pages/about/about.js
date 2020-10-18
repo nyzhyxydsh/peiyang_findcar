@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    about: ["https://www.huhailong.vip/image/about.png", "https://www.huhailong.vip/image/about.jpg"]
+    about: ["127.0.0.1/image/about.png", "127.0.0.1/image/about.jpg"]
   },
 
   /**

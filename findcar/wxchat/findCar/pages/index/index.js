@@ -16,7 +16,7 @@ Page({
     let that = this;
     wx.getSetting({
       success(res){
-        console.log(res.authSetting['scope.userInfo'])
+        //console.log(res.authSetting['scope.userInfo'])
         if (res.authSetting['scope.userInfo']==null){
           that.setData({
             istrue: true

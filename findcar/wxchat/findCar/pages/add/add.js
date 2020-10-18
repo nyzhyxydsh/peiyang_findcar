@@ -19,7 +19,7 @@ Page({
   onLoad: function (options) {
     var date = new Date();
     let year = date.getFullYear();
-    let month = date.getMonth()>9?date.getMonth():"0"+date.getMonth();
+    let month = date.getMonth()>9;
     let day = date.getDate()>9?date.getDate():"0"+date.getDate();
     let startDate = year+"-"+month+"-"+day;
     let tempDay = date.getDate()+6;
@@ -49,9 +49,10 @@ Page({
         goDate: res.detail.value.godate+" "+res.detail.value.gotime,
         tel: res.detail.value.tel,
         peopleCount: res.detail.value.pCount,
-        mark: res.detail.value.mark
+        mark: res.detail.value.mark,
       },
       success: function (res) {
+        console.log("插入数据成功"+res);
         wx.reLaunch({
           url: '../index/index',
           success:function(res){
