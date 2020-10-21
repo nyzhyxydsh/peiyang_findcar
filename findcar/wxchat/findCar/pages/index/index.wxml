@@ -1,4 +1,14 @@
  <!-- 搜索模块 -->
+ <view id='top-bar'>
+    <view id='get-location' bindtap='bindGetLocation'>
+      <view wx:if="{{locationInfo === ''}}">
+        <i class="iconfont icon-dingwei" style="fontsize:40rpx;"></i>定位
+      </view>
+      <view wx:else>
+        <i class="iconfont icon-dingwei" style="fontsize:20rpx;"></i> {{locationInfo}}
+      </view>
+      </view>
+ </view>
 <view class="weui-search-bar">
             <view class="weui-search-bar__form">
                 <view class="weui-search-bar__box">
@@ -22,11 +32,18 @@
   <!-- 信息展示模块 -->
   <!-- 展示类型 -->
   <view class="findType">
-    <!-- <view class="allfind">筛选：</view> -->
     <image src="../../image/all.png" class="menu" bindtap="findby" data-type="{{null}}"></image>全部
     <image src="../../image/car.png" class="menu" bindtap="findby" data-type="findcar"></image>找车
     <image src="../../image/people.png" class="menu" bindtap="findby" data-type="findpeople"></image>找人
+
+
+    <!-- <button class="iconfont icon-fujin" id="passenger" style="font-size:66rpx;color:#fff" bindtap="findby" data-type="{{null}}"></button>全部
+    <button class="iconfont icon-qiche-copy" id="passenger" style="font-size:66rpx;color:#fff" bindtap="findby" data-type="findcar"></button>找车
+    <button class="iconfont icon-chengke" id="passenger" bindtap="findby" data-type="findpeople" style="font-size:66rpx;color:#fff" bindtap="findby" data-type="findcar"></button>找人 -->
   </view>
+
+
+
   <!-- 对应信息 -->
   <view class="info">
     <view class="weui-cells weui-cells_after-title" wx:for="{{infos}}" wx:key="{{item.id}}">

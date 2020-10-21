@@ -2,6 +2,37 @@
     margin-top: 0;
     font-size: 14px;
 }
+#top-bar {
+  width: 96%;
+  height: 40rpx;
+  padding: 20rpx;
+  font-size: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+  background-color: #00b26a;
+}
+
+#top-bar view {
+  flex: 1;
+  justify-content: left;
+}
+
+#passenger, #driver{
+  margin: 20px auto;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 80px;
+  color: #fff;
+  background-color: #00b26a;
+  margin: 0rpx;
+  padding: 0rpx;
+}
+
 .searchbar-result .weui-cell__bd{
   padding: 2px 0 2px 20px;
   color: #666;

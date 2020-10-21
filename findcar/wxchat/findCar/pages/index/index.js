@@ -9,7 +9,8 @@ Page({
     istrue: false,
     pageNum: 1,
     findType: null,
-    infos: []
+    infos: [],
+    locationInfo: ''
   },
   onLoad: function () {
     
@@ -79,6 +80,90 @@ Page({
       istrue: false
     })
   },
+
+  bindGetLocation: function () {
+    let _this = this;
+    return new Promise(resolve => {
+      wx.getLocation({
+        type: 'wgs84',
+        success(res) {
+          let latitude = res.latitude
+          let longitude = res.longitude
+          // 解析经纬度信息
+          demo.reverseGeocoder({
+            location: {
+              latitude: latitude,
+              longitude: longitude
+            },
+            success: function (res) {
+              let address = res.result.address_component
+              _this.setData({
+                locationInfo: address.city + ',' + address.district
+              })
+              resolve(res);
+            },
+            fail: function (res) {
+              _this.setData({
+                locationInfo: '定位失败'
+              })
+            },
+            complete: function (res) {}
+          });
+        }
+      })
+    }).then(res => {
+      let address = res.result.address_component
+      let curLocation = {
+        latitude: res.result.location.lat,
+        longitude: res.result.location.lng
+      }
+    
+      wx.cloud.callFunction({
+        name: 'getCourseByDistrict',
+        data: {
+          curLocation: curLocation,
+          start: {
+            city: address.city
+          },
+          end: {
+            city: address.city
+          },
+          showType: this.data.showType
+        },
+      }).then(res => {
+        let courseList = res.result.data;
+        // 计算距离信息
+        if (res.result.data.length > 0) {
+          let arr = res.result.data;
+          let startAddressArr = [];
+          for (let i = 0; i < arr.length; i++) {
+            startAddressArr.push({
+              latitude: arr[i].startAddressInfo.latitude,
+              longitude: arr[i].startAddressInfo.longitude
+            })
+          }
+
+          // 请求api，获取距离信息  
+          demo.calculateDistance({
+            from: curLocation,
+            to: startAddressArr,
+            success: function (res) {
+              let distanceArr = res.result.elements;
+              for (let i = 0; i < distanceArr.length; i++) {
+                courseList[i].distance = (distanceArr[i].distance / 1000).toFixed(2);
+              }
+              _this.setData({
+                msgList: courseList
+              })
+            }
+          });
+        }   
+        wx.hideLoading()
+      }).catch(console.error)
+    })  
+  },
+
+  
   onGotUserInfo:function(e){
     console.log(e);
     const avatarUrl = e.detail.userInfo.avatarUrl

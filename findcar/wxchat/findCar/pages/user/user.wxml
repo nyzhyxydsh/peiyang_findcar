@@ -16,23 +16,27 @@
 <view class="page">
   <navigator url="../history/history">
     <view class="weui-cell">
+      <label class="iconfont icon-flagfold" style="fontsize:10rpx;color:#00b26a;"></label>
       <view class="weui-cell__bd">发布历史</view>
     </view>
   </navigator>
 
   <navigator url="../info/info">
     <view class="weui-cell">
+      <label class="iconfont icon-renshu" style="fontsize:10rpx;color:#00b26a;"></label>
       <view class="weui-cell__bd">个人资料</view>
     </view>
   </navigator>
   
   <navigator url="../message/message">
   <view class="weui-cell">
+    <label class="iconfont icon-ai-safe" style="fontsize:10rpx;color:#00b26a;"></label>
     <view class="weui-cell__bd">意见反馈</view>
   </view>
-  </navigator>
+  </navigator>  
   <navigator url="../about/about">
   <view class="weui-cell">
+    <label class="iconfont icon-guanyuwomen" style="fontsize:10rpx;color:#00b26a;"></label>
     <view class="weui-cell__bd">关于</view>
   </view>
   </navigator>

@@ -7,8 +7,10 @@
     "pages/add/add",
     "pages/info/info",
     "pages/about/about",
-   "pages/message/message",
-    "pages/detail/detail"
+    "pages/publish/publish",
+    "pages/message/message",
+    "pages/detail/detail",
+    "pages/publishMsg/publishMsg"
        
     
   ],
@@ -29,7 +31,7 @@
       "text": "拼车广场"
     },
     {
-      "pagePath": "pages/add/add",
+      "pagePath": "pages/publish/publish",
       "iconPath": "/image/add.png",
       "selectedIconPath": "/image/add2.png",
       "text": "信息发布"
